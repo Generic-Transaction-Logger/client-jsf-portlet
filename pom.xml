@@ -3,7 +3,7 @@
 
     <groupId>com.erbjuder.logger</groupId>
     <artifactId>log_message_services_client_jsf_portlet</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>log_message_services_client_jsf_portlet</name>
@@ -72,21 +72,25 @@
             <version>2.0</version>
         </dependency>
        
+
         <dependency>
             <groupId>com.liferay.faces</groupId>
             <artifactId>liferay-faces-alloy</artifactId>
             <version>3.2.4-ga5</version>
         </dependency>
+
         <dependency>
             <groupId>com.liferay.faces</groupId>
             <artifactId>liferay-faces-bridge-impl</artifactId>
             <version>4.2.0-beta1-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <groupId>com.liferay.faces</groupId>
             <artifactId>liferay-faces-util</artifactId>
             <version>4.2.0-beta1-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <groupId>com.liferay.faces</groupId>
             <artifactId>liferay-faces-portal</artifactId>
@@ -166,7 +170,7 @@
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                                 <!-- Unpack "maven-war-plugin" file                       -->
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<!--                                <resource>
+                                <!--                                <resource>
                                     <targetPath>${basedir}/target/${project.artifactId}-${project.version}-WAR</targetPath>
                                     <file>${basedir}/target/${project.artifactId}-${project.version}.war</file>
                                     <unpack>true</unpack>
@@ -178,7 +182,7 @@
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                                 <!-- Copy "resources"                                     -->
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<!--                                <resource>
+                                <!--                                <resource>
                                     <directory>src/main/resources</directory>                      
                                     <targetPath>${basedir}/target/${project.artifactId}-${project.version}-WAR/WEB-INF/classes</targetPath>
                                     <preservePath>true</preservePath>
@@ -189,7 +193,7 @@
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                                 <!-- Copy "wsdl"                                          -->
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<!--                                <resource>
+                                <!--                                <resource>
                                     <directory>src/main/wsdl</directory>                      
                                     <targetPath>${basedir}/target/${project.artifactId}-${project.version}-WAR/WEB-INF/wsdl</targetPath>
                                     <preservePath>true</preservePath>
@@ -201,7 +205,7 @@
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                                 <!-- Create final archive and attach it as Maven artifact -->
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<!--                                <resource>
+                                <!--                                <resource>
                                     <targetPath>${basedir}/target/${project.artifactId}-${project.version}.war</targetPath>
                                     <directory>${basedir}/target/${project.artifactId}-${project.version}-WAR</directory>
                                     <pack>true</pack>
@@ -225,7 +229,7 @@
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                                 <!-- Unpack "maven-jar-plugin" file                       -->
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<!--                                <resource>
+                                <!--                                <resource>
                                     <targetPath>${basedir}/target/${project.artifactId}-${project.version}-JAR</targetPath>
                                     <file>${basedir}/target/${project.artifactId}-${project.version}.jar</file>
                                     <unpack>true</unpack>
@@ -237,7 +241,7 @@
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                                 <!-- Unpack "dependency-jar" files from WAR to JAR        -->
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<!--                                <resource>
+                                <!--                                <resource>
                                     <targetPath>${basedir}/target/${project.artifactId}-${project.version}-JAR</targetPath>
                                     <file>${basedir}/target/${project.artifactId}-${project.version}-WAR/WEB-INF/lib/*.jar</file>
                                     <unpack>true</unpack>
@@ -250,7 +254,7 @@
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                                 <!-- Create final archive and attach it as Maven artifact -->
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<!--                                <resource>
+                                <!--                                <resource>
                                     <targetPath>${basedir}/target/${project.artifactId}-${project.version}.jar</targetPath>
                                     <directory>${basedir}/target/${project.artifactId}-${project.version}-JAR</directory>
                                     <pack>true</pack>
@@ -278,10 +282,17 @@
             <id>all-nexus</id>
             <name>all-nexus</name>
             <layout>default</layout>
-            <url>http://localhost:8081/nexus/content/groups/allrepos/</url>
+            <url>http://localhost:8081/nexus/content/groups/public/</url>
+             
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
             <snapshots>
                 <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
             </snapshots>
+             
         </repository>
         
         
