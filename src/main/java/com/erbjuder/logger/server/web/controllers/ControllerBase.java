@@ -25,6 +25,7 @@ import com.erbjuder.logger.server.exception.InvalidXML;
 import com.erbjuder.logger.server.web.helper.CommonWebUtil;
 import com.erbjuder.logger.server.web.helper.PaginationHelper;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -66,11 +67,17 @@ public abstract class ControllerBase implements Serializable {
         items = null;
     }
 
-    public String convertTime(long time) {
-
-        Date date = new Date(time);
+    public String convertTimestampTime(Timestamp timestamp) {
         Format format = getDateFormater();
-        return format.format(date).toString();
+        String timeToSeconds = format.format(timestamp);
+        String nanoTime = Integer.toString(timestamp.getNanos());
+        return timeToSeconds + "." + nanoTime;
+    }
+
+    public String convertDateTime(Date date) {
+        Format format = getDateFormater();
+        String timeToSeconds = format.format(date);
+        return timeToSeconds;
     }
 
     public SimpleDateFormat getDateFormater() {

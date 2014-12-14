@@ -17,11 +17,7 @@
  */
 package com.erbjuder.logger.server.web.controllers;
 
-import com.erbjuder.logger.server.common.helper.MimeTypes;
-import com.erbjuder.logger.server.entity.interfaces.LogMessageData;
-import com.erbjuder.logger.server.exception.InvalidXML;
 import com.erbjuder.logger.server.facade.interfaces.LogMessageFacade;
-import com.erbjuder.logger.server.web.helper.CommonWebUtil;
 import java.io.Serializable;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
