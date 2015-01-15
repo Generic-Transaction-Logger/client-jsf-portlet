@@ -428,8 +428,10 @@ public abstract class LogMessageControllerBase extends ControllerBase implements
 
     public void search() {
 //        this.getLogger().log(Level.SEVERE, "search()");
+        current = null;
         logMsgDetailView = false;
         render_response_done = false;
+        transactionReferenceId = "";
         recreateModel();
     }
 
