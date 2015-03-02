@@ -375,7 +375,7 @@
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                                 <!-- Deploye                                              -->
                                 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                                <resource>
+<!--                                <resource>
                                     <file>${basedir}/target/${project.artifactId}-${project.version}-Dev.war</file>  
                                     <targetPath>/home/server-1/Portal/portal-6.2-ce-ga2_with_gfish_4.1_b13-12_named_3.1.2.2/glassfish-3.1.2.2/deploy</targetPath>       
                                 </resource>
@@ -390,7 +390,7 @@
                                 <resource>
                                     <file>${basedir}/target/${project.artifactId}-${project.version}-Prod.war</file>  
                                     <targetPath>/home/server-1/Portal/portal-6.2-ce-ga2_with_gfish_4.1_b13-12_named_3.1.2.2/glassfish-3.1.2.2/deploy</targetPath>       
-                                </resource>
+                                </resource>-->
 
                                 
                             </resources>
